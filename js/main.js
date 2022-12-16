@@ -13,12 +13,32 @@ function highlight(el){
 function myAlert(){
     alert("I'm clicked")
 }
+
+function highlightActor(actor){
+    //alert(actor);
+    let spans = document.querySelectorAll("#play span");
+    for(const mySpan of spans){
+
+        if(actor ==mySpan.dataset.actor){//white turn to yellow
+            mySpan.style.backgroundColor='yellow';
+        }else{//turn to white
+            mySpan.style.backgroundColor='white';
+        } 
+    }
+}
+
 let spans = document.querySelectorAll("#play span");
  
 console.log(spans);
 
 for(const mySpan of spans){
-    mySpan.addEventListener('click',myAlert);
+   // mySpan.addEventListener('click',myAlert);
+   // alert(mySpan.dataset.actor);
+
+   mySpan.addEventListener("click",function(){
+       highlightActor(mySpan.dataset.actor);
+
+   });
 }
 
 
