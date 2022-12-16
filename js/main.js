@@ -1,11 +1,25 @@
-let actors = document.querySelectorAll(".hamlet");
- 
-console.log(actors);
- 
-for (let i = 0; i < actors.length; i++) {
- actors[i].style.backgroundColor = "orange";
+function highlight(el){
+    //el.style.backgroundColor='blue';
+
+    if(el.style.backgroundColor == 'white'){//white turn to yellow
+        el.style.backgroundColor='yellow';
+    }else{//turn to white
+            el.style.backgroundColor='white';
+    }
+
+
 }
 
+function myAlert(){
+    alert("I'm clicked")
+}
+let spans = document.querySelectorAll("#play span");
+ 
+console.log(spans);
+
+for(const mySpan of spans){
+    mySpan.addEventListener('click',myAlert);
+}
 
 
 
